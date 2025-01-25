@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transport Option</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Edit Transport Option</h1>
+        <form action="/transport/edit/<%= transport.TransportID %>" method="POST" class="card p-4 shadow">
+            <div class="mb-3">
+                <label for="Transport_Type" class="form-label">Transport Type</label>
+                <select id="Transport_Type" name="Transport_Type" class="form-control" required>
+                    <option value="Car" <%= transport.Transport_Type === 'Car' ? 'selected' : '' %>>Car</option>
+                    <option value="Bus" <%= transport.Transport_Type === 'Bus' ? 'selected' : '' %>>Bus</option>
+                    <option value="Train" <%= transport.Transport_Type === 'Train' ? 'selected' : '' %>>Train</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="ProviderName" class="form-label">Provider Name</label>
+                <input type="text" class="form-control" id="ProviderName" name="ProviderName" value="<%= transport.ProviderName %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="Cost" class="form-label">Cost</label>
+                <input type="number" class="form-control" id="Cost" name="Cost" step="0.01" value="<%= transport.Cost %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="VendorID" class="form-label">Vendor ID</label>
+                <input type="number" class="form-control" id="VendorID" name="VendorID" value="<%= transport.VendorID %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="PackageID" class="form-label">Package ID</label>
+                <input type="number" class="form-control" id="PackageID" name="PackageID" value="<%= transport.PackageID %>" required>
+            </div>
+            <button type="submit" class="btn btn-success">Update Transport</button>
+        </form>
+    </div>
+</body>
+</html>

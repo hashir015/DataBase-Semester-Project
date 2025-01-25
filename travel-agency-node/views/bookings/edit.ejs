@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/navbar') %>
+    <div class="container mt-4">
+        <h1>Edit Booking</h1>
+        <form action="/bookings/edit/<%= booking.BookingID %>" method="POST">
+            <div class="mb-3">
+                <label for="CustomerID" class="form-label">Customer ID</label>
+                <select class="form-control" id="CustomerID" name="CustomerID" required>
+                    <% customers.forEach(customer => { %>
+                        <option value="<%= customer.CustomerID %>" <%= booking.CustomerID == customer.CustomerID ? 'selected' : '' %>><%= customer.Cust_Name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="BookingDate" class="form-label">Booking Date</label>
+                <input type="date" class="form-control" id="BookingDate" name="BookingDate" value="<%= booking.BookingDate.toISOString().split('T')[0] %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="Booking_Status" class="form-label">Status</label>
+                <select class="form-control" id="Booking_Status" name="Booking_Status" required>
+                    <option value="Confirmed" <%= booking.Booking_Status == 'Confirmed' ? 'selected' : '' %>>Confirmed</option>
+                    <option value="Pending" <%= booking.Booking_Status == 'Pending' ? 'selected' : '' %>>Pending</option>
+                    <option value="Cancelled" <%= booking.Booking_Status == 'Cancelled' ? 'selected' : '' %>>Cancelled</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="TotalAmount" class="form-label">Total Amount</label>
+                <input type="number" class="form-control" id="TotalAmount" name="TotalAmount" value="<%= booking.TotalAmount %>" required>
+            </div>
+            <button type="submit" class="btn btn-success">Update Booking</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

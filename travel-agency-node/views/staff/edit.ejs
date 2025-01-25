@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Edit Staff Member</title>
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container mt-4">
+        <h1>Edit Staff Member</h1>
+        <form action="/staff/edit/<%= staff.StaffID %>" method="POST">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" name="Name" id="Name" class="form-control" value="<%= staff.Staff_Name %>" required>
+            </div>
+            <div class="form-group">
+                <label for="Role">Role</label>
+                <input type="text" name="Role" id="Role" class="form-control" value="<%= staff.Staff_Role %>" required>
+            </div>
+            <div class="form-group">
+                <label for="Contact">Contact</label>
+                <input type="text" name="Contact" id="Contact" class="form-control" value="<%= staff.Contact %>" required>
+            </div>
+            <div class="form-group">
+                <label for="Salary">Salary</label>
+                <input type="number" name="Salary" id="Salary" class="form-control" value="<%= staff.Salary %>" required>
+            </div>
+            <div class="form-group">
+                <label for="VendorID">Vendor ID</label>
+                <input type="number" name="VendorID" id="VendorID" class="form-control" value="<%= staff.VendorID %>" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Update</button>
+        </form>
+    </div>
+</body>
+</html>

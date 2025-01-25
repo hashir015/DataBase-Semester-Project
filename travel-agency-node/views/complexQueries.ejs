@@ -1,0 +1,66 @@
+<%- include('./partials/head') %>
+<body>
+  <%- include('./partials/navbar') %>
+  <div class="container-fluid p-0">
+    <!-- Hero Section -->
+    <div class="hero-section bg-primary text-white text-center py-5">
+      <h1 class="display-4">Complex Queries</h1>
+      <p class="lead">Explore data insights with dynamic SQL queries</p>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <!-- Query Buttons -->
+    <div class="text-center mb-4">
+      <h2 class="mb-3">Select a Query</h2>
+      <% queries.forEach((query, index) => { %>
+        <a href="/complex-queries/<%= index + 1 %>" class="btn btn-outline-primary btn-lg m-2 shadow-sm">
+          <%= query.name %>
+        </a>
+      <% }); %>
+    </div>
+
+    <!-- Query Details -->
+    <% if (queryName) { %>
+      <h3 class="text-center mb-4">Results for: <%= queryName %></h3>
+    <% } %>
+
+    <!-- Results Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover shadow-sm">
+        <thead class="table-primary">
+          <tr>
+            <% if (data.length > 0) { 
+              Object.keys(data[0]).forEach(key => { %>
+              <th class="text-center"><%= key %></th>
+            <% }); } else { %>
+              <th class="text-center">No Data Available</th>
+            <% } %>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data.length > 0) { 
+            data.forEach(row => { %>
+            <tr>
+              <% Object.values(row).forEach(value => { %>
+                <td class="text-center"><%= value %></td>
+              <% }); %>
+            </tr>
+          <% }); 
+          } else { %>
+            <tr>
+              <td colspan="<%= Object.keys(data[0] || {}).length %>" class="text-center">No results to display</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p class="mb-0">© 2025 Travel Agency System. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

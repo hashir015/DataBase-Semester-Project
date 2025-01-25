@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Create Hotel</title>
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container mt-4">
+        <h1>Create Hotel</h1>
+        <form action="/hotels/create" method="POST">
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input type="text" id="Name" name="Name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <input type="text" id="Location" name="Location" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Rating">Rating</label>
+                <input type="number" step="0.1" id="Rating" name="Rating" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="VendorID">Vendor ID</label>
+                <input type="number" id="VendorID" name="VendorID" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="PackageID">Package ID</label>
+                <input type="number" id="PackageID" name="PackageID" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Create</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <title>Edit Payment</title>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+    <div class="container mt-4">
+        <h1>Edit Payment</h1>
+        <form action="/payments/edit/<%= payment.PaymentID %>" method="POST">
+            <div class="form-group mb-3">
+                <label for="Amount">Amount</label>
+                <input type="number" name="Amount" id="Amount" class="form-control" value="<%= payment.Amount %>" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="PaymentMethod">Payment Method</label>
+                <input type="text" name="PaymentMethod" id="PaymentMethod" class="form-control" value="<%= payment.PaymentMethod %>" required>
+            </div>
+            <div class="form-group mb-3">
+                <label for="BookingID">Booking ID</label>
+                <input type="number" name="BookingID" id="BookingID" class="form-control" value="<%= payment.BookingID %>" required>
+            </div>
+            <div class="form-group mb-3">
+              <label for="PaymentDate">Payment Date</label>
+              <input type="date" name="PaymentDate" id="PaymentDate" class="form-control" value="<%= new Date(payment.PaymentDate).toISOString().split('T')[0] %>" required>
+          </div>
+          
+            <div class="form-group mb-3">
+                <label for="PaymentStatus">Payment Status</label>
+                <select name="PaymentStatus" id="PaymentStatus" class="form-control" required>
+                    <option value="Paid" <%= payment.Payment_Status === 'Paid' ? 'selected' : '' %>>Paid</option>
+                    <option value="Pending" <%= payment.Payment_Status === 'Pending' ? 'selected' : '' %>>Pending</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Update</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

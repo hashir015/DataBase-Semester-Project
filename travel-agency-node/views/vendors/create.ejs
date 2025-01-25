@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+<body>
+  <%- include('../partials/navbar') %>
+
+  <h1>Create Vendor</h1>
+  <form action="/vendors/create" method="POST">
+    <div class="form-group">
+      <label for="Vendor_Name">Name</label>
+      <input type="text" name="Vendor_Name" id="Vendor_Name" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="Contact">Contact</label>
+      <input type="text" name="Contact" id="Contact" class="form-control" required />
+    </div>
+    <div class="form-group">
+      <label for="ServiceType">Service Type</label>
+      <input type="text" name="ServiceType" id="ServiceType" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</body>

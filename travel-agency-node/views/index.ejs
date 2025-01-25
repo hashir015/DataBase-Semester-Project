@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Agency System</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap");
+      body {
+        background-color: #080808; /* Dark background */
+        color: #ffffff; /* White text */
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background-color: #0b0e0d; /* Dark background for navbar */
+        padding-top: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .navbar button {
+        background-color: #7dd62f; /* Blue color for buttons */
+        color: rgb(15, 7, 7);
+        margin: 10px 0;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        width: 180px;
+      }
+      .navbar button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+      }
+      .main-content {
+        padding: 20px;
+        position: relative;
+      }
+
+      .logo {
+        position: absolute;
+        top: 10;
+        left: 50;
+      }
+
+      .hero-section {
+        text-align: center;
+        padding: 50px 20px;
+        z-index: 99;
+        height: 20rem;
+        margin-inline: auto;
+        background-image: url("images/bg.png"); /* Background image URL */
+        background-size: cover; /* Ensure the image covers the entire section */
+        background-position: center; /* Center the background image */
+        color: #ffffff; /* White text color to contrast with the background */
+        margin-bottom: 20px;
+      }
+      .hero-text {
+        position: absolute;
+        top: 186px;
+        left: 40px;
+        color: #7dd62f;
+        font-size: 3.4rem;
+        font-family: "Rubik Vinyl", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .hero-section img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+      }
+
+     
+
+      .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background-color: #7dd62f;
+        color: #090707;
+        border: 2px solid #080f0c;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 250px;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 15px rgba(78, 204, 163, 0.5);
+      }
+      .card a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+      }
+      .footer {
+        background-color: #2c2c38;
+        color: #dcdcdc;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+        border-top: 2px solid #4ecca3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo" />
+        </div>
+
+        <h1 class="hero-text">Travel Agency System</h1>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="card-grid">
+        <div class="card"><a href="/customers">Customers</a></div>
+        <div class="card"><a href="/bookings">Bookings</a></div>
+        <div class="card"><a href="/travel-packages">Travel Packages</a></div>
+        <div class="card"><a href="/destinations">Destinations</a></div>
+        <div class="card"><a href="/flights">Flights</a></div>
+        <div class="card"><a href="/hotels">Hotels</a></div>
+        <div class="card"><a href="/payments">Payments</a></div>
+        <div class="card"><a href="/staff">Staff</a></div>
+        <div class="card"><a href="/vendors">Vendors</a></div>
+        <div class="card"><a href="/coupons">Coupons</a></div>
+        <div class="card"><a href="/hotelrooms">Hotel Rooms</a></div>
+        <div class="card"><a href="/transport">Transport</a></div>
+        <div class="card"><a href="/tours">Tours</a></div>
+        <div class="card"><a href="/reviews">Reviews</a></div>
+        <div class="card"><a href="/complex-queries/1">Complex Queries</a></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Travel Agency System. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
